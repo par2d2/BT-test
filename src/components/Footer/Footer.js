@@ -1,3 +1,5 @@
+import './footer.css';
+
 const Footer = () =>(
     <footer>
         <svg width="36" height="36" className="float-left">

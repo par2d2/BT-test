@@ -26,14 +26,14 @@ describe('getEverything', () =>{
             Promise.reject(expected)
         )
         const err = await getEverything(searchTerm);
-        expect(err).toEqual(Error('Error'));
+        expect(err).toEqual('Error');
         expect(getApiCall).toBeCalledWith(`https://newsapi.org/v2/${EVERYTHING}?q=${searchTerm}&pageSize=${RESULTS_LIMIT}&apiKey=${API_KEY}`)
     })
 
     test('should throw error if string is empty', async ()=>{
         const searchTerm = ' ';
         const err = await getEverything(searchTerm);
-        expect(err).toEqual(Error(EMPTY_STRING_ERROR));
+        expect(err).toEqual(EMPTY_STRING_ERROR);
         expect(getApiCall).toBeCalledTimes(0);
     })
 
@@ -46,7 +46,7 @@ describe('getEverything', () =>{
         )
         const searchTerm = 'testing';
         const result = await getEverything(searchTerm)
-        expect(result).toEqual(Error(expected));
+        expect(result).toEqual(expected);
         expect(getApiCall).toBeCalledWith(`https://newsapi.org/v2/${EVERYTHING}?q=${searchTerm}&pageSize=${RESULTS_LIMIT}&apiKey=${API_KEY}`)
     })
 })
