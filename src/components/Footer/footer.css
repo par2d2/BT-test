@@ -1,10 +1,8 @@
 footer {
+    padding: 15px 10px 0 10px;
     font-family: Calibri;
     background-color: #5514b4;
     color: #ffffff;
-    width: 100%;
-}
-
-footer {
     min-height: 100px;
+    text-align: center;
 }

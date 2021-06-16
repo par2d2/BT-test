@@ -1,19 +1,20 @@
 .App {
     padding: 10px;
     min-height: 80vh;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .searchInputBox{
-    margin: auto;
     height: 30px;
     width: 80%;
     border-radius: 0px;
-
+    font-size: 1em;
 }
 
 .searchSubmitButton{
     -webkit-appearance: none;
-    height: 37px;
+    height: 36px;
     background-color: #24a0ed;
     border-radius: 0px;
     color: #ffffff;
@@ -21,10 +22,22 @@
 }
 
 .errorMessage {
+    text-align: center;
     min-height: 30px;
+    color: #FF6600;
+    font-weight: bold;
 }
 
 .searchForm{
+    width: 90%;
+    margin: auto;
+    text-align: center;
     display: flex;
-    justify-content: space-between;
+}
+@media only screen and (min-width: 35em) {
+    .newsCardWrapper{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content:space-between;
+    }
 }
