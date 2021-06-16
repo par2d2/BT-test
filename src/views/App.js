@@ -4,10 +4,11 @@ import { getEverything } from '../newsApi/newsApi';
 
 function App() {
   const [searchTerm, setSearchTerm] = useState('');
+  const [searchResults, setSearchResults] = useState([]);
 
   const onSubmit = (e) =>{
-      e.preventDefault();
-      getEverything(searchTerm);
+    e.preventDefault();
+    getEverything(searchTerm).then();
   }
 
   return (
