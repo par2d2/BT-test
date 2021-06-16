@@ -1,9 +1,9 @@
-const NewsCard = ({title, url, author, content}, index) => {
-    return (<div key={`${title}-${index}`}>
+const NewsCard = ({title, url, author, content}, index) => (
+    <div key={`${title}-${index}`}>
         <a href={url} target='_blank' rel="noopener noreferrer">
 
             <div>
-                <h2>{title}gfhgfhgfh</h2>
+                <h2>{title}</h2>
             </div>
 
             <div>{author}</div>
@@ -14,8 +14,8 @@ const NewsCard = ({title, url, author, content}, index) => {
 
         </a>
     </div>
-    )
-}
+)
+
 
 
 export default NewsCard;

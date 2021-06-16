@@ -25,14 +25,14 @@ describe('getEverything', () =>{
         getApiCall.mockImplementation(() =>
             Promise.reject(expected)
         )
-        const err = await getEverything(searchTerm);
+        const err = await getEverything(searchTerm).catch(err => err);;
         expect(err).toEqual('Error');
         expect(getApiCall).toBeCalledWith(`https://newsapi.org/v2/${EVERYTHING}?q=${searchTerm}&pageSize=${RESULTS_LIMIT}&apiKey=${API_KEY}`)
     })
 
     test('should throw error if string is empty', async ()=>{
         const searchTerm = ' ';
-        const err = await getEverything(searchTerm);
+        const err = await getEverything(searchTerm).catch(err => err);;
         expect(err).toEqual(EMPTY_STRING_ERROR);
         expect(getApiCall).toBeCalledTimes(0);
     })
@@ -43,9 +43,9 @@ describe('getEverything', () =>{
         const returnData = {status: 'error', message:expected, articles:notExpected};
         getApiCall.mockImplementation(() =>
             Promise.resolve(returnData)
-        )
+        );
         const searchTerm = 'testing';
-        const result = await getEverything(searchTerm)
+        const result = await getEverything(searchTerm).catch(err => err);
         expect(result).toEqual(expected);
         expect(getApiCall).toBeCalledWith(`https://newsapi.org/v2/${EVERYTHING}?q=${searchTerm}&pageSize=${RESULTS_LIMIT}&apiKey=${API_KEY}`)
     })

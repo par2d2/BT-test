@@ -1,3 +1,30 @@
 .App {
+    padding: 10px;
     min-height: 80vh;
+}
+
+.searchInputBox{
+    margin: auto;
+    height: 30px;
+    width: 80%;
+    border-radius: 0px;
+
+}
+
+.searchSubmitButton{
+    -webkit-appearance: none;
+    height: 37px;
+    background-color: #24a0ed;
+    border-radius: 0px;
+    color: #ffffff;
+    font-size: 1em;
+}
+
+.errorMessage {
+    min-height: 30px;
+}
+
+.searchForm{
+    display: flex;
+    justify-content: space-between;
 }

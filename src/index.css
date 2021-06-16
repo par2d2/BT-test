@@ -159,32 +159,7 @@ textarea {
   clear: both;
 }
 
-header, footer {
-  font-family: Calibri;
-  background-color: #5514b4;
-  color: #ffffff;
-  width: 100%;
-}
 
-header {
-  text-align: center;
-  height: 80px;
-  padding: 10px;
-  line-height: 1.5em;
-}
-
-footer {
-  min-height: 500px;
-}
-
-
-h1 {
-  font-size: 1.125rem;
-}
-
-.float-left {
-  float: left;
-}
 /* ==========================================================================
    EXAMPLE Media Queries for Responsive Design.
    These examples override the primary ('mobile first') styles.
