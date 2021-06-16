@@ -1,14 +1,19 @@
 import { getApiCall} from "../utils/apiCall";
-import { API_KEY, HEADLINES} from "../constants/newsApi";
+import { API_KEY, EVERYTHING, RESULTS_LIMIT} from "../constants/newsApi";
+import { EMPTY_STRING_ERROR } from '../constants/errors';
 
-const getTopHeadLines = (input) => {
-    getApiCall(buildUrl(input, HEADLINES)).then(response => {
-        console.log(response);
+const getEverything = (input) => {
+    if (input.trim() === '') return Error(EMPTY_STRING_ERROR);
+
+    return getApiCall(buildUrl(input, EVERYTHING, RESULTS_LIMIT)).then(response => {
+        return response
     }).catch(err => {
-        console.log(err);
+        throw Error(err)
     });
 }
 
-const buildUrl = (input, type) => {
-    return `https://newsapi.org/v2/${type}?q=${input}&apiKey=${API_KEY}`
+const buildUrl = (input, type, limit) => {
+    return `https://newsapi.org/v2/${type}?q=${input}&pageSize=${limit}&apiKey=${API_KEY}`
 }
+
+export { getEverything }
