@@ -1,0 +1,13 @@
+header {
+    font-family: Calibri;
+    background-color: #5514b4;
+    color: #ffffff;
+    width: 100%;
+}
+
+header {
+    text-align: center;
+    height: 80px;
+    padding: 10px;
+    line-height: 1.5em;
+}
