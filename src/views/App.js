@@ -31,8 +31,8 @@ function App() {
           {errorMessage}
         </div>
         <form onSubmit={onSubmit} className="searchForm">
-          <input type="text" onChange={onChange} className="searchInputBox"/>
-          <input type="submit" value="Search" className="searchSubmitButton"/>
+          <input type="text" onChange={onChange} className="searchInputBox" title="search-input"/>
+          <input type="submit" value="Search" className="searchSubmitButton" title="search-button"/>
         </form>
         <div className="newsCardWrapper">
           {news.map((item, index) => NewsCard(item, index))}
